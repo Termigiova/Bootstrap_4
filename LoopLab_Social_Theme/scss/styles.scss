@@ -1,3 +1,10 @@
+@mixin boxed-fas($background, $color) {
+    background: $background;
+    color: $color;
+    padding: 5px;
+    border-radius: 5px
+}
+
 .looplab-body {
     background: #333;
     color: #fff;
@@ -30,11 +37,9 @@
         opacity: 0.8;
     }
     
-    .fas {
-        color: #008ed6;
-        background: #fff;
-        padding: 5px;
-        border-radius: 5px
-    }
+    .fas { @include boxed-fas(#fff, #008ed6); }
 }
 
+#explore-section, #share-section {
+    .fas { @include boxed-fas(#333, #fff); }
+}
