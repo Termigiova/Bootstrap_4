@@ -43,3 +43,7 @@
 #explore-section, #share-section {
     .fas { @include boxed-fas(#333, #fff); }
 }
+
+#create-section {
+    .fas { @include boxed-fas(#fff, #008ed6); }
+}
