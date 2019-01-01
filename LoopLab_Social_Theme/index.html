@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="./scss/styles.css">
 
 </head>
-<body class="looplab-body">
+<body class="looplab-body" data-spy="scroll" data-target="#main-nav" id="home">
 
 <!--NAVBAR SECTION-->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" id="main-nav">
     <div class="container">
         <a href="index.html" class="navbar-brand">LoopLAB</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -30,16 +30,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#home-head-secion" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#expore-head-secion" class="nav-link">Explore</a>
+                    <a href="#explore-head-section" class="nav-link">Explore</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#create-head-secion" class="nav-link">Create</a>
+                    <a href="#create-head-section" class="nav-link">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#share-head-secion" class="nav-link">Share</a>
+                    <a href="#share-head-section" class="nav-link">Share</a>
                 </li>
             </ul>
         </div>
@@ -294,6 +294,9 @@
 <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+    
+    // Init Scrollspy
+    $('body').scrollspy({target: '#main-nav'});
 </script>
 
 </body>
