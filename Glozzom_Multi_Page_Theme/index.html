@@ -153,6 +153,36 @@
     </div>
 </section>
 
+<!--VIDEO PLAY-->
+<section id="video-play">
+    <div class="dark-overlay">
+        <div class="row">
+            <div class="col">
+                <div class="container p-5">
+                    <a href="" class="video" data-video="https://www.youtube.com/embed/HgzGwKwLmgM" data-toggle="modal" data-target="#videoModal">
+                        <i class="fas fa-play fa-3x"></i>
+                    </a>
+                    <h1>See what we do</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--VIDEO MODAL-->
+<div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <iframe src="" frameborder="0"height="350" width="100%" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -162,6 +192,20 @@
     $('.carousel').carousel({
         interval: 6000,
         pause: 'hover'
+    })
+    
+    // Video Play
+    $(function() {
+        // Auto play modal video
+        $('.video').click(function () {
+            let theModal = $(this).data("target"),
+                videoSRC = $(this).attr('data-video'),
+                videoSRCauto = videoSRC + "?modestbranding=1&rel=0&contorls=0&showinfo=0&html5=1&autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function () {
+                $(theModal + ' iframe').attr('src', videoSRC);
+            });
+        });
     })
 </script>
 

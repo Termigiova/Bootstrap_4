@@ -42,4 +42,15 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
+#video-play {
+  position: relative;
+  min-height: 200px;
+  background: url("../img/media.jpg") no-repeat fixed 0 -300px;
+  text-align: center;
+  color: white;
+}
+#video-play a {
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */
