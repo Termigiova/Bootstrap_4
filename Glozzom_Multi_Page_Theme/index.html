@@ -13,6 +13,9 @@
     <!--Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
+    <!--Lightbox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    
     <!--Styles-->
     <link rel="stylesheet" href="./scss/styles.css">
 
@@ -169,6 +172,71 @@
     </div>
 </section>
 
+<!--PHOTO GALLERY-->
+<section id="gallery" class="py-5">
+    <div class="container">
+        <h1 class="text-center">Photo Gallery</h1>
+        <p class="text-center">Check out our photos</p>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/560x560" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-weight="560">
+                    <img src="https://source.unsplash.com/random/560x560" alt="" class="img-fluid">
+                </a>
+            </div>
+    
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/561x561" data-toggle="lightbox" data-gallery="img-gallery" data-height="561" data-weight="561">
+                    <img src="https://source.unsplash.com/random/561x561" alt="" class="img-fluid">
+                </a>
+            </div>
+    
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/562x562" data-toggle="lightbox" data-gallery="img-gallery" data-height="562" data-weight="562">
+                    <img src="https://source.unsplash.com/random/562x562" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/563x563" data-toggle="lightbox" data-gallery="img-gallery" data-height="563" data-weight="563">
+                    <img src="https://source.unsplash.com/random/563x563" alt="" class="img-fluid">
+                </a>
+            </div>
+        
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/564x564" data-toggle="lightbox" data-gallery="img-gallery" data-height="564" data-weight="564">
+                    <img src="https://source.unsplash.com/random/564x564" alt="" class="img-fluid">
+                </a>
+            </div>
+        
+            <div class="col-md-4">
+                <a href="https://source.unsplash.com/random/565x565" data-toggle="lightbox" data-gallery="img-gallery" data-height="565" data-weight="565">
+                    <img src="https://source.unsplash.com/random/565x565" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--NEWSLETTER-->
+<section id="newsletter" class="text-center p-5 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Sign Up For Our Newsletter</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, consequuntur dolorum eveniet ex
+                    incidunt laborum nihil odio optio possimus quidem.</p>
+                <form class="form-inline justify-content-center">
+                    <input type="text" class="form-control-mb-2 mr-2" placeholder="Enter Name">
+                    <input type="email" class="form-control-mb-2 mr-2" placeholder="Enter Email">
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!--VIDEO MODAL-->
 <div class="modal fade" id="videoModal">
     <div class="modal-dialog">
@@ -183,11 +251,28 @@
     </div>
 </div>
 
+<!--FOOTER-->
+<footer id="main-footer" class="text-center p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Copyright &copy; <span id="year"></span> Glozzom</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+<!--Lightbox-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+    
     // Configure slider
     $('.carousel').carousel({
         interval: 6000,
@@ -207,6 +292,12 @@
             });
         });
     })
+    
+    // Lightbox
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
 </script>
 
 </body>
