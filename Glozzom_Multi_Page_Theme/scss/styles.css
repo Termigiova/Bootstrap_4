@@ -13,6 +13,11 @@ body {
   border-left: #444 3px solid;
 }
 
+#main-footer {
+  background: #000;
+  color: #fff;
+}
+
 .carousel-item {
   height: 450px;
 }
